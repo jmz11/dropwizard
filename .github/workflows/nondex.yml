@@ -1,0 +1,17 @@
+name: NonDex
+
+on: [push, pull_request]
+
+jobs:
+  ubuntu-jdk8:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set up JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: 8
+      - name: Run NonDex
+        run: sh ./nondex.sh
