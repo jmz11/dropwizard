@@ -54,7 +54,7 @@ public class LoggingExceptionMapperTest extends AbstractJerseyTest {
 
     @Test
     public void handlesMethodNotAllowedWithHeaders() {
-        System.out.println("test known flaky");
+        System.out.println("test known flaky!");
         final Throwable thrown = catchThrowable(() -> target("/exception/json-mapping-exception")
             .request(MediaType.APPLICATION_JSON)
             .post(Entity.json("A"), String.class));
